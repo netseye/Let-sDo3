@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<navigation-bar title="Toolbox" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+
+<scroll-view type="custom" scroll-y class="container">
+<view class="banner">广告位</view>
+  <grid-view type="aligned" cross-axis-count="{{1}}" cross-axis-gap="{{16}}" main-axis-gap="{{16}}">
+    <view wx:for="{{items}}" wx:key="title" index="{{item.title}}" class="center">
+      <button type="primary" bind:tap="hanldeItemClick" data-path="{{item.path}}" data-page="{{item.title}}">{{item.title}}</button>
+    </view>
+  </grid-view>
+</scroll-view>

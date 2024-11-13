@@ -1,0 +1,18 @@
+<navigation-bar title="{{title}}" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<view class="container">
+  <text style="font-size:medium;word-break:break-all">蓝牙设备名称：{{name}}</text>
+  <text style="font-size:x-small;color:{{connected? '#4caf50':'red' }}; margin-bottom:16px">状态：{{connected?"已连接":"已断开"}}</text>
+  <text class="device">设备：{{connectedDeviceId}}</text>
+  <text class="service" wx:for="{{services}}">服务：{{item.uuid}}</text>
+  <text class="characteristic" wx:for="{{characteristics}}">特称：{{item.uuid}}</text>
+  <view style="display: flex;justify-content: space-around; width: 100%;margin: 16px 0px">
+    <text style="font-size:x-small;color:gray">当前：{{connected?aperture:"已断开"}}</text>
+    <text style="font-size:x-small;color:gray">当前：{{connected?shutter:"已断开"}}</text>
+    <text style="font-size:x-small;color:gray">当前：{{connected?iso:"已断开"}}</text>
+  </view>
+  <view style="display: flex;justify-content: space-around; width: 100%;">
+    <button type="primary" bind:tap="handleNextAperture">光圈</button>
+    <button type="primary" style="margin: 0px 16px;" bind:tap="handleNextShutterSpeed">快门</button>
+    <button type="warn" plain="true" bind:tap="handleTakePhoto">拍照</button>
+  </view>
+</view>

@@ -1,0 +1,10 @@
+.container {
+  padding: 30rpx;
+}
+
+.device, .service, .characteristic {
+  font-size: 14px;
+  color: gray;
+  word-break: break-all;
+  margin-bottom: 8px;
+}
