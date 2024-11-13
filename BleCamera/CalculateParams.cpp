@@ -88,7 +88,7 @@ ExposureParams calculateAperturePriority(float lux, float targetAperture) {
 
   // 基于目标光圈和光照度计算快门速度
   float ev = log2(lux / 2.5);
-  params.shutter =  (pow(2, ev) / (params.aperture * params.aperture));
+  params.shutter =  (pow(2, ev) / params.aperture * params.aperture);
 
   // 根据快门速度调整ISO
   if (params.shutter < 2000) {
@@ -134,7 +134,7 @@ ExposureParams calculateExposure(ExposureMode mode, float lux) {
   if (mode == AUTO) {
     return calculateAutoExposure(lux);
   } else if (mode == APERTURE) {
-    return calculateAperturePriority(lux, currentAperture);
+    return calculateAperturePriority(lux, currentAperture / 10.0f);
   } else {
     return calculateShutterPriority(lux, currentShutterSpeed);
   }

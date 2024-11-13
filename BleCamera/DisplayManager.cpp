@@ -78,7 +78,7 @@ void flashScreen() {
 
 void displayParameters(int aperture, int shutter_speed, int lux, int iso, ExposureMode exposureMode) {
 
-  static float lastAperture = -1;
+  static int lastAperture = -1;
   static int lastShutterSpeed = -1;
   static unsigned int lastLux = 0;
   static float lastIso = -1;
@@ -113,7 +113,7 @@ void displayParameters(int aperture, int shutter_speed, int lux, int iso, Exposu
 
     // 显示 ISO 值
     tft.setCursor(10, 95);
-    tft.printf("ISO: %.2f", iso);
+    tft.printf("ISO: %d", iso);
 
     // 在右上角显示曝光模式
     const char* modeStr = "";
@@ -140,5 +140,6 @@ void displayParameters(int aperture, int shutter_speed, int lux, int iso, Exposu
     tft.setTextColor(ST77XX_WHITE);  // 文字为白色
     tft.setTextSize(2);
     tft.print(modeStr);
+    delay(16);
   }
 }

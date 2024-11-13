@@ -13,9 +13,5 @@ enum ExposureMode {
 void calculateInit();
 uint16_t readLUX();
 void calculate();
-// double calculate_ev(double aperture, double shutter_speed, double iso);
-// double calculate_lux(double aperture, double shutter_speed, double iso);
-// double calculate_ev_from_lux(double lux);
-// double calculate_iso(double aperture, double shutter_speed, double lux);
 
 #endif
